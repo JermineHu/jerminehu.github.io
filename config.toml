@@ -1,0 +1,70 @@
+BaseURL = "https://Jermine.vdo.pub/"
+LanguageCode = "zh-CN"
+HasCJKLanguage = true
+Title = "Jermineの博客 "
+Theme = "violet"
+pygmentsStyle = "default"
+pygmentsUseClasses = true
+Paginate = 10 #分页每页记录数
+paginatePath ="page"
+DisqusShortname = "Jermine" #评论时显示的名字
+
+[Author]
+  Name = "Jermine"
+
+[outputs]
+  home = [ "RSS", "HTML" ]
+    
+[outputFormats] 
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
+
+[Params]
+  AuthorHomepage = "https://Jermine.vdo.pub"
+  BottomIntroduce = '暂时没东西放'
+  Description = "Docker,Kubernetes,AI-IoT,RISC-V,Golang,Rust"
+  Subtitle = "书不记，熟读可记；义不精，细思可精；惟有志不立，直是无着力处。"
+  Weibo = "Jermine"
+  WeiboID = 1816308191
+  Twitter = "JermineHu"
+  GitHub = "JermineHu"
+  Facebook = "Jermine"
+  LinkIn = "Jermine"
+  Imglogo = "img/logo.jpg"
+  AuthorImg = "img/author.jpg"
+  DateFormat = "2006年01月02日"
+  MonthFormat = "2006年01月"
+  FancyBox = true
+
+  [Params.GoogleAnalytics]
+    ID = "UA-10147768-2"
+
+  [Params.Disqus]
+    ShortName = "Jermine"
+
+  [Params.Strings]
+    Search = "搜索"
+    PageNotFound = "你访问的页面不存在"
+    ShowSideBar = "显示侧边栏"
+    HideSideBar = "隐藏侧边栏"
+    Categories = "分类"
+    Archive = "归档"
+    Tags = "标签"
+    TagCloud = "标签云"
+    Rss = "RSS 订阅"
+    TableOfContents = "文章目录"
+
+[Menu]
+  [[Menu.Main]]
+    Name = "首页"
+    URL = "/"
+    Weight = 1
+  [[Menu.Main]]
+    Name = "Github"
+    URL = "https://github.com/JermineHu"
+    Weight = 2
+  [[Menu.Main]]
+    Name = "关于"
+    URL = "/about"
+    Weight = 2
