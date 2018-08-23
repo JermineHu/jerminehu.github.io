@@ -63,6 +63,53 @@ go build main.go
 
 To execute this code `go tool dist list`，you  will get a list that all supported platforms.
 
+获取结果如下：
+
+```
+Husee@Jermine-PC MINGW64 ~/Desktop
+$ go tool dist list
+android/386
+android/amd64
+android/arm
+android/arm64
+darwin/386
+darwin/amd64
+darwin/arm
+darwin/arm64
+dragonfly/amd64
+freebsd/386
+freebsd/amd64
+freebsd/arm
+linux/386
+linux/amd64
+linux/arm
+linux/arm64
+linux/mips
+linux/mips64
+linux/mips64le
+linux/mipsle
+linux/ppc64
+linux/ppc64le
+linux/s390x
+nacl/386
+nacl/amd64p32
+nacl/arm
+netbsd/386
+netbsd/amd64
+netbsd/arm
+openbsd/386
+openbsd/amd64
+openbsd/arm
+plan9/386
+plan9/amd64
+plan9/arm
+solaris/amd64
+windows/386
+windows/amd64
+
+```
+
+
 # go对各个操作系统和指令集的支持详情如下
 
 ### Go (Golang) GOOS and GOARCH
