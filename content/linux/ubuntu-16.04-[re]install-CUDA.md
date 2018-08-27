@@ -84,3 +84,80 @@ $ ./deviceQuery
 ## 四、运行`nvidia-docker`
 
 参考：https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup
+
+## 五、错误解决
+
+
+### 错误 1 
+
+```
+apt-get -f install 错误 No apport report written because MaxReports is reached already Errors were...
+```
+
+安装cuda 时提示以下错误，按照要求执行了以后错误任然出现，执行`sudo apt-get update `和 `sudo apt-get upgrade` 以后依然是同样的错误。
+
+```
+sudo apt-get upgrade
+
+Reading package lists... Done
+
+Building dependency tree       
+Reading state information... Done
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+ cuda-curand-dev-8-0 : Depends: cuda-curand-8-0 (>= 8.0.64) but it is not installed
+ cuda-cusolver-dev-8-0 : Depends: cuda-cusolver-8-0 (>= 8.0.64) but it is not installed
+ cuda-cusparse-dev-8-0 : Depends: cuda-cusparse-8-0 (>= 8.0.64) but it is not installed
+ cuda-nvgraph-dev-8-0 : Depends: cuda-nvgraph-8-0 (>= 8.0.64) but it is not installed
+ cuda-nvrtc-dev-8-0 : Depends: cuda-nvrtc-8-0 (>= 8.0.64) but it is not installed
+ cuda-toolkit-8-0 : Depends: cuda-nvml-dev-8-0 (>= 8.0.64) but it is not installed
+E: Unmet dependencies. Try using -f.
+
+```
+
+在尝试了 
+
+```
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo dpkg --configure -a
+sudo apt-get install -f
+```
+都还存在同样问题时需要手动打开status
+
+sudo vi /var/lib/dpkg/status 
+
+然后通过命令行输入 /name 比如 /cuda-curand-8-0  然后按Enter 键（下一个关键字按n）查找文件中的对应模块记录并将其删除（删除按dd），把以上所有模块记录全部删除后 shift+:组合，输入 wq！保存并退出，最后再次执行sudo apt-get install --f 。
+
+### 错误 2
+
+Ubuntu16.04 由于已经达到 MaxReports 限制，没有写入 apport 报告。
+
+```
+dpkg: 处理软件包 libzbar-dev:amd64 (--configure)时出错：
+ 依赖关系问题 - 仍未被配置
+由于已经达到 MaxReports 限制，没有写入 apport 报告。
+
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+```
+
+从网上找到的解决方案为：
+
+```
+$ cd /var/lib/dpkg  
+$ sudo mv info/ info-bak  
+$ sudo mkdir info  
+$ sudo apt-get update  
+$ sudo apt-get install -f  
+
+```
+就解决了问题，然后恢复info-bak
+
+```
+$ sudo mv info/* info-bak/  
+$ sudo rm -rf info  
+$ sudo mv info-bak/ info  
+
+```
+一切就ok
