@@ -161,3 +161,26 @@ $ sudo mv info-bak/ info
 
 ```
 一切就ok
+
+### 错误3 
+
+`Failed to initialize NVML: Driver/library version mismatch`
+刚刚GPU遇到一个神奇的bug。
+
+运行 `nvidia-smi` 报错：
+
+`Failed to initialize NVML: Driver/library version mismatch`
+
+运行nvidia 官方的程序，报错
+
+ `no CUDA-capable device is detected`
+如下图： 
+
+![nvidia-app](https://images2017.cnblogs.com/blog/1029804/201801/1029804-20180110194636410-1490461823.png)
+ 
+
+然后解决的办法是： 重启。。。重启。。。
+
+还好虚惊一场，只能说：
+
+ `Surprise surprise, rebooting solved the issue。`
