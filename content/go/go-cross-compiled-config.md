@@ -1,6 +1,6 @@
 ---
 title: "Golang Cross Compiled Config - go语言跨平台交叉编译"
-date: 2016-10-23T14:14:13+08:00
+date: 2016-03-23T14:14:13+08:00
 categories: ["All","golang"]
 tags: ["golang","交叉编译","cross-compiling"]
 toc: true
