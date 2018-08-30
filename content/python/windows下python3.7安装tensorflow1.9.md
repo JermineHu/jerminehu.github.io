@@ -1,6 +1,6 @@
 ---
 title: "Windows下python3.7安装tensorflow1"
-date: 2018-08-29T17:49:08+08:00
+date: 2018-07-29T17:49:08+08:00
 categories: ["All","python","tensorflow","DeepLearn"]
 tags: ["All","python","tensorflow","DeepLearn"]
 toc: true
