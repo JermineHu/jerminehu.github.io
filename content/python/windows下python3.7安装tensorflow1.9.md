@@ -179,3 +179,23 @@ http://www.dependencywalker.com/
       （3）import cv2就可以正常使用了
 
 win7安装python出问题主要是缺少系统文件，win7系统会不断的更新补丁，如果有哪个补丁未安装可能就会出问题，尤其是纯净版的win7系统，在安装其它软件之前一定要把win7的补丁补全，虽然一大堆。
+
+### 解决以后再查看：
+
+结果如下：
+
+```
+PS C:\Users\Husee\Desktop> pip install .\numpy-1.15.1+mkl-cp37-cp37m-win_amd64.whl
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Processing c:\users\husee\desktop\numpy-1.15.1+mkl-cp37-cp37m-win_amd64.whl
+Installing collected packages: numpy
+Successfully installed numpy-1.15.1+mkl
+PS C:\Users\Husee\Desktop>
+PS C:\Users\Husee\Desktop> python
+Python 3.7.0b5 (v3.7.0b5:abb8802389, May 31 2018, 01:54:01) [MSC v.1913 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+>>> tensorflow.__version__
+'1.9.0'
+>>>
+```
