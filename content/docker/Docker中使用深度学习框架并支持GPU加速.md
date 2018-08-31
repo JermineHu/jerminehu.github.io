@@ -1,6 +1,6 @@
 ---
 title: "Docker中使用深度学习框架并支持GPU加速"
-date: 2018-08-31T15:40:16+08:00
+date: 2017-08-23T15:40:16+08:00
 categories: ["All","Linux","DeepLearn","docker"]
 tags: ["Linux","DeepLearn","docker","tensorflow"]
 toc: true
@@ -11,20 +11,21 @@ keywords: ["Linux","DeepLearn","docker","tensorflow"]
 description: "Docker中使用深度学习框架并支持GPU加速"
 ---
 
+## Docker中使用深度学习框架并支持GPU加速
 
-##### 启动一个支持gpu的容器
+### 启动一个支持gpu的容器
 
 ```
 docker run --runtime=nvidia --restart=always --name tensorflow  -dit -v `pwd`:/app -w /app  nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 ```
-##### 进入容器
+### 进入容器
 
 ```
 docker exec -it tensorflow bash
 
 ```
 
-##### 设置源
+### 设置源
 
 
 ```
@@ -39,13 +40,13 @@ deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe 
 deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse
 
 ```
-##### 更新源
+### 更新源
 
 ```
 sudo apt-get update 
 ```
 
-##### 安装相关依赖
+### 安装相关依赖
 
 
 ```
@@ -62,7 +63,7 @@ sudo apt-get update
     rm -rf /var/lib/apt/lists/*
 ```
 
-##### 测试程序
+### 测试程序
 
 
 ```
