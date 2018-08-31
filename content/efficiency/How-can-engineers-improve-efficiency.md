@@ -1,13 +1,13 @@
 ---
 title: "How engineers learn efficiently? - 工程师如何高效学习？"
 date: 2018-08-27T13:06:58+08:00
-categories: ["All","efficiently"]
-tags: ["efficiently",]
+categories: ["All","efficiency"]
+tags: ["efficiency",]
 toc: true
 author: "Jermine"
 author_homepage:  "/"
 weight: 70
-keywords: ["efficiently","高效","学习" ]
+keywords: ["efficiency","efficiently","高效","学习" ]
 description: "How engineers learn efficiently? - 工程师如何高效学习？"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "终端利器tmux不止完美替换nohup-&-screen等进程守护命令 "
-date: 2018-08-31T12:49:08+08:00
+date: 2017-01-31T12:49:08+08:00
 categories: ["All","Linux","efficiency"]
 tags: ["Linux","efficiency"]
 toc: true
