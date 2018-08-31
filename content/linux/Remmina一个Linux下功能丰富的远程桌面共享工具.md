@@ -1,0 +1,136 @@
+---
+title: "Remmina一个Linux下功能丰富的远程桌面共享工具"
+date: 2017-07-31T12:26:34+08:00
+categories: ["All","Linux","windows","协议"]
+tags: ["Linux","windows","协议"]
+toc: true
+author: "Jermine"
+author_homepage:  "/"
+weight: 70
+keywords: ["Linux","windows","协议","VNC","SPICE","RDP","RFB","Remmina "]
+description: "Remmina一个Linux下功能丰富的远程桌面共享工具"
+---
+
+Remmina 是一款在 Linux 和其他类 Unix 系统下的自由开源、功能丰富、强大的远程桌面客户端，它用 GTK+ 3 编写而成。它适用于那些需要远程访问及使用许多计算机的系统管理员和在外出行人员。
+
+它以简单、统一、同质、易用的用户界面支持多种网络协议。
+
+## Remmina 功能
+* 支持 RDP、VNC、NX、XDMCP 和 SSH。
+* 用户能够以组的形式维护一份连接配置列表。
+* 支持用户直接输入服务器地址的快速连接。
+* 具有更高分辨率的远程桌面，可以在窗口和全屏模式下滚动/缩放。
+* 支持窗口全屏模式；当鼠标移动到屏幕边缘时，远程桌面会自动滚动。
+* 还支持全屏模式的浮动工具栏；使你能够在不同模式间切换、触发键盘获取、最小化等。
+* 提供选项卡式界面，可以按组管理。
+* 还提供托盘图标，允许你快速访问已配置的连接文件。
+在本文中，我们将向你展示如何在 Linux 中安装 Remmina，以及使用它通过支持的不同协议实现桌面共享。
+
+## 先决条件
+
+* 在远程机器上允许桌面共享（让远程机器允许远程连接）。
+* 在远程机器上设置 SSH 服务。
+
+
+## 如何在 Linux 中安装 Remmina 远程共享工具
+
+
+Remmina 及其插件包已经在所有主流的 Linux 发行版的大多数官方仓库中提供。运行下面的命令以安装它和所有支持的插件：
+
+```s
+------------ 在 Debian/Ubuntu 中 ------------
+$ sudo apt-get install remmina remmina-plugin-*
+------------ 在 CentOS/RHEL 中 ------------
+# yum install remmina remmina-plugin-*
+------------ 在 Fedora 22+ 中 ------------
+$ sudo dnf copr enable hubbitus/remmina-next
+$ sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
+
+```
+
+一旦安装完成后，在 `Ubuntu` 或 `Linux Mint` 菜单中搜索 `remmina`，接着运行它：
+
+![Remmina Desktop Sharing Client](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091358qmm266veau6660at.png)
+
+Remmina 桌面共享客户端
+
+你可以通过图形界面或者编辑 `$HOME/.remmina` 或者 `$HOME/.config/remmina` 下的文件来进行配置。
+
+要设置到一个新的远程服务器的连接，按下 `Ctrl+N` 并点击 `Connection -> New`，如下截图中配置远程连接。这是基本的设置界面。
+
+![Remmina Basic Desktop Preferences](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091358m1e7nd304yne40cs.png)
+
+Remmina 基础桌面配置
+
+点击界面上的 `“Advanced”`，配置高级连接设置。
+
+![Remmina Advance Desktop Settings](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091359eboj1trvxcqaxyra.png)
+
+Remmina 高级桌面设置
+
+要配置 SSH，点击界面中的 SSH。
+
+![Remmina SSH Settings](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091359ba8eaeg8s2vvexad.png)
+
+Remmina SSH 设置
+
+在完成所有的必要配置后，点击 “Save” 保存设置，在主界面中你会如下看到所有已配置远程连接。
+
+![Remmina Configured Servers](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091359ria2mtm8p15omc6z.png)
+
+Remmina 配置的服务器
+
+### 使用 sFTP 连接到远程机器
+选择连接配置并编辑设置，在 `“Protocols”` 下拉菜单中选择 `sFTP - Secure File Transfer`。接着设置启动路径（可选），并指定 SSH 验证细节。最后点击连接。
+
+![Remmina sftp Connection](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091400sipliwppcuumwilx.png)
+
+Remmina sftp 连接
+
+这里输入你的 SSH 用户密码。
+
+![Enter SSH Password](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091400t47hpg4nmk7t474r.png)
+
+输入 SSH 密码
+
+如果你看到下面的界面，那么代表 sFTP 连接成功了，你现在可以在两台机器键传输文件了。
+
+![Remmina Remote sFTP Filesystem](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091401k1wp1o4zzfgmxp7o.png)
+
+Remmina 远程 sFTP 文件系统
+
+### 使用 SSH 连接到远程机器
+选择连接配置并编辑设置，在 `“Protocols” `下拉菜单中选择 `SSH - Secure Shell`，并可选设置启动程序以及 `SSH` 验证细节。最后点击连接并输入 `SSH` 密码。
+
+![Remmina SSH Connection](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091401o313d33mojkkftjm.png)
+
+Remmina SSH 连接
+
+当你看到下面的界面，这意味着你的连接成功了，你现在可以使用 SSH 控制远程机器了。
+
+![Remmina Remote SSH Connection](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091401klj3zlq66h8q6h58.png)
+
+Remmina 远程 SSH 连接
+
+### 使用 VNC 连接到远程机器
+选择连接配置并编辑设置，在 “Protocols” 下拉菜单中选择 VNC - Virtual Network Computing。为该连接配置基础、高级以及 ssh 设置，点击连接，接着输入用户 SSH 密码。
+
+![Remmina VNC Connection](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091402ljf95sfqk0c5ifij.png)
+
+### Remmina VNC 连接
+
+一旦你看到下面的界面时，这意味着你已经成功使用 VNC 协议连接到远程机器上了。
+
+如下截图所示，在桌面登录界面输入用户登录密码。
+
+![Remmina Remote Desktop Login](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091402uows1p851zu8f7ou.png)
+
+Remmina 远程桌面登录
+
+![Remmina Remote Desktop Sharing](https://dn-linuxcn.qbox.me/data/attachment/album/201705/09/091403y5crdfccl5qsrdsx.png)
+
+Remmina 远程桌面共享
+
+使用上面的步骤可以很简单地使用其他的协议访问远程机器。
+
+Remmina 主页： https://www.remmina.org/wp/
