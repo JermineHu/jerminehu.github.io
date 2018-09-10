@@ -133,10 +133,10 @@ influxdb函数分为聚合函数，选择函数，转换函数，预测函数等
 * 选择函数: `SAMPLE(), PERCENTILE(), FIRST(), LAST(), TOP(), BOTTOM()`等。
 * 转换函数: `DERIVATIVE(), DIFFERENCE()`等。
 * 预测函数：`HOLT_WINTERS()`。
-* 
-先从官网导入测试数据（注：这里测试用的版本是1.3.1，最新版本是1.3.5）:
-```
 
+先从官网导入测试数据（注：这里测试用的版本是1.3.1，最新版本是1.3.5）:
+
+```
 $ curl https://s3.amazonaws.com/noaa.water-database/NOAA_data.txt -o NOAA_data.txt
 $ influx -import -path=NOAA_data.txt -precision=s -database=NOAA_water_database
 $ influx -precision rfc3339 -database NOAA_water_database
@@ -162,6 +162,7 @@ h2o_feet,location=santa_monica
 ```
 
 下面的例子都以官方示例数据库来测试，这里只用部分数据以方便观察。measurement为`h2o_feet`，`tag key`为`location`，`field key`有`level description`和`water_level`两个。
+
 ```
 
 > SELECT * FROM "h2o_feet" WHERE time >= '2015-08-17T23:48:00Z' AND time <= '2015-08-18T00:30:00Z'
