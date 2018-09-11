@@ -5,7 +5,7 @@ Title = "Jermineの博客 "
 Theme = "violet"
 pygmentsStyle = "default"
 pygmentsUseClasses = true
-Paginate = 10 #分页每页记录数
+Paginate = 15 #分页每页记录数
 paginatePath ="page"
 DisqusShortname = "Jermine" #评论时显示的名字
 
