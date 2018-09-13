@@ -15,11 +15,11 @@ description: "Sub System Linux for Win10 - Win10设置Linux子系统"
 
 # 设置win10开启Linux
 
-![linux子系统](/img/1836534-05d8e85c3ba54a60.png)
+![linux子系统](/img/win10/1836534-05d8e85c3ba54a60.png)
 
-![linux子系统](/img/1836534-780f6423bd5160f2.png)
+![linux子系统](/img/win10/1836534-780f6423bd5160f2.png)
 
-![linux子系统](/img/1836534-05bbfeca9c2f7aae.png)
+![linux子系统](/img/win10/1836534-05bbfeca9c2f7aae.png)
 
 
 系统升级到一周年正式版及以上(1607)
