@@ -1,2 +1,2 @@
 # jerminehu.github.io
-Jermine's blog
+The repo of Jermine's blog , the sites url is https://jermine.vdo.pub 
