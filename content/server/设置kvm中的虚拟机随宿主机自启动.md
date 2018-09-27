@@ -15,9 +15,9 @@ description: "设置kvm中的虚拟机随宿主机自启动"
 
 在kvm图形化管理工具里面可以设置，让kvm虚拟机随着宿主虚拟机一起启动。（**必须在关机状态下做**）
 
-![image1](https://images2018.cnblogs.com/blog/383260/201805/383260-20180523110156983-385647098.png)
+![image1](/img/kvm/28.png)
 
-![image2](https://images2018.cnblogs.com/blog/383260/201805/383260-20180523110415167-561331291.png)
+![image2](/img/kvm/29.png)
 
 
 **设置好以后会像Windows一样创建一个快捷方式**
