@@ -20,9 +20,9 @@ description: "使用dotnet core通过docker部署一个基于微服务的demo应
 
 ### 架构图如下
 
-![１](/img/microservice/.net/1.png)
+![１](/img/microservice/dotnet/1.png)
 
 
-### 项目地址
+### 项目地址    
 
 https://github.com/dotnet-architecture/eShopOnContainers
