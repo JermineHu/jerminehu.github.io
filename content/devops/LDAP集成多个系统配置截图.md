@@ -1,13 +1,13 @@
 ---
 title: "LDAP集成多个系统配置截图"
 date: 2018-12-07T09:47:45+08:00
-categories: ["All"]
-tags: ["",]
+categories: ["All","DevOps","Linux"]
+tags: ["docker","LDAP","Harbor","Jira","Nexcloud","Jenkins","Reviewboard","Linux"]
 toc: true
 author: "Jermine && Grover"
 author_homepage:  "/"
 weight: 70
-keywords: ["", ]
+keywords: ["docker","LDAP","Harbor","Jira","Nexcloud","Jenkins","Reviewboard","Linux" ]
 description: "LDAP集成多个系统配置截图"
 ---
 
