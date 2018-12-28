@@ -78,7 +78,190 @@ systemctl restart nslcd
 su - cgh
 ```
 
-Ubuntu 可以参照： https://www.server-world.info/en/note?os=Ubuntu_16.04&p=openldap&f=3
+Ubuntu 可以参照：
+
+```
+root@www:~# apt-get -y install libnss-ldap libpam-ldap ldap-utils nscd
+(1) specify LDAP server's URI
+ +---------------------| Configuring ldap-auth-config |----------------------+
+ | Please enter the URI of the LDAP server to use. This is a string in the   |
+ | form of ldap://<hostname or IP>:<port>/. ldaps:// or ldapi:// can also    |
+ | be used. The port number is optional.                                     |
+ |                                                                           |
+ | Note: It is usually a good idea to use an IP address because it reduces   |
+ | risks of failure in the event name service problems.                      |
+ |                                                                           |
+ | LDAP server Uniform Resource Identifier:                                  |
+ |                                                                           |
+ | ldap://dlp.srv.world/_________________________________________________    |
+ |                                                                           |
+ |                                  <Ok>                                     |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+(2) specify suffix
+ +---------------------| Configuring ldap-auth-config |----------------------+
+ | Please enter the distinguished name of the LDAP search base. Many sites   |
+ | use the components of their domain names for this purpose. For example,   |
+ | the domain "example.net" would use "dc=example,dc=net" as the             |
+ | distinguished name of the search base.                                    |
+ |                                                                           |
+ | Distinguished name of the search base:                                    |
+ |                                                                           |
+ | dc=srv,dc=world_______________________________________________________    |
+ |                                                                           |
+ |                                  <Ok>                                     |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+(3) specify LDAP version
+  +---------------------| Configuring ldap-auth-config |---------------------+
+  | Please enter which version of the LDAP protocol should be used by        |
+  | ldapns. It is usually a good idea to set this to the highest available   |
+  | version.                                                                 |
+  |                                                                          |
+  | LDAP version to use:                                                     |
+  |                                                                          |
+  |                                    3                                     |
+  |                                    2                                     |
+  |                                                                          |
+  |                                                                          |
+  |                                  <Ok>                                    |
+  |                                                                          |
+  +--------------------------------------------------------------------------+
+
+(4) select the one you like. ( this example selects 'Yes' )
+ +---------------------| Configuring ldap-auth-config |----------------------+
+ |                                                                           |
+ | This option will allow you to make password utilities that use pam to     |
+ | behave like you would be changing local passwords.                        |
+ |                                                                           |
+ | The password will be stored in a separate file which will be made         |
+ | readable to root only.                                                    |
+ |                                                                           |
+ | If you are using NFS mounted /etc or any other custom setup, you should   |
+ | disable this.                                                             |
+ |                                                                           |
+ | Make local root Database admin:                                           |
+ |                                                                           |
+ |                    <Yes>                       <No>                       |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+(5) select the one you like. ( this example selects 'No' )
+    +-------------------| Configuring ldap-auth-config |-------------------+
+    |                                                                      |
+    | Choose this option if you are required to login to the database to   |
+    | retrieve entries.                                                    |
+    |                                                                      |
+    | Note: Under a normal setup, this is not needed.                      |
+    |                                                                      |
+    | Does the LDAP database require login?                                |
+    |                                                                      |
+    |                   <Yes>                      <No>                    |
+    |                                                                      |
+    +----------------------------------------------------------------------+
+
+(6) specify LDAP admin account's suffix
+          +-------------| Configuring ldap-auth-config |-------------+
+          | This account will be used when root changes a password.  |
+          |                                                          |
+          | Note: This account has to be a privileged account.       |
+          |                                                          |
+          | LDAP account for root:                                   |
+          |                                                          |
+          | cn=admin,dc=srv,dc=world_____________________________    |
+          |                                                          |
+          |                          <Ok>                            |
+          |                                                          |
+          +----------------------------------------------------------+
+
+(7) specify password for LDAP admin account
+ +---------------------| Configuring ldap-auth-config |----------------------+
+ | Please enter the password to use when ldap-auth-config tries to login to  |
+ | the LDAP directory using the LDAP account for root.                       |
+ |                                                                           |
+ | The password will be stored in a separate file /etc/ldap.secret which     |
+ | will be made readable to root only.                                       |
+ |                                                                           |
+ | Entering an empty password will re-use the old password.                  |
+ |                                                                           |
+ | LDAP root account password:                                               |
+ |                                                                           |
+ | _________________________________________________________________________ |
+ |                                                                           |
+ |                                  <Ok>                                     |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+root@www:~# vi /etc/nsswitch.conf
+# line 7: add
+passwd:     compat ldap
+group:     compat ldap
+shadow:     compat ldap
+root@www:~# vi /etc/pam.d/common-password
+# line 26: change ( remove 'use_authtok' )
+password     [success=1 user_unknown=ignore default=die]     pam_ldap.so try_first_pass
+root@www:~# vi /etc/pam.d/common-session
+# add to the end if need ( create home directory automatically at initial login )
+ session optional        pam_mkhomedir.so skel=/etc/skel umask=077
+root@www:~# exit
+Ubuntu 16.04 LTS www.srv.world ttyS0
+www login: debian     # LDAP user
+Password:
+Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.4.0-22-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+8 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Creating directory '/home/debian'.
+debian@www:~$ # just logined
+debian@www:~$ passwd # try to change LDAP password
+Enter login(LDAP) password:# input current password
+New password:# input new password
+Re-enter new password:# confirm
+LDAP password information changed for debian
+passwd: password updated successfully     # just changed
+
+```
+
+**开机启动nscd：**
+
+```
+systemctl enable nscd
+```
+
+重启
+
+
+
+
+**每次修改完记得执行：** 
+
+```
+systemctl restart nscd
+```
+
+
 
 [参考文档](https://www.lisenet.com/2016/setup-ldap-authentication-on-centos-7/)
 
