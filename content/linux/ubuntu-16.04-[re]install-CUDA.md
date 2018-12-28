@@ -176,7 +176,7 @@ $ sudo mv info-bak/ info
  `no CUDA-capable device is detected`
 如下图： 
 
-![nvidia-app](https://images2017.cnblogs.com/blog/1029804/201801/1029804-20180110194636410-1490461823.png)
+![nvidia-app](/img/linux/5.png)
  
 
 然后解决的办法是： 重启。。。重启。。。

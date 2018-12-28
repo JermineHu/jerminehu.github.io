@@ -78,10 +78,12 @@ systemctl restart nslcd
 su - cgh
 ```
 
+Ubuntu 可以参照： https://www.server-world.info/en/note?os=Ubuntu_16.04&p=openldap&f=3
+
 [参考文档](https://www.lisenet.com/2016/setup-ldap-authentication-on-centos-7/)
 
 
->### 附录：
+### 附录：
 
 加证书：
 
