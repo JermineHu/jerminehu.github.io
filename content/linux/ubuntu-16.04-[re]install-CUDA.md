@@ -1,15 +1,51 @@
 ---
 title: "ubuntu 16.04 [re]install CUDA - Ubuntu 安装 CUDA"
 date: 2018-08-24T13:48:25+08:00
-categories: ["All","Linux","CUDA"]
-tags: ["Linux","CUDA"]
+categories: ["All","Linux","CUDA",conda,python]
+tags: ["Linux","CUDA",conda,python]
 toc: true
 author: "Jermine"
 author_homepage:  "/"
 weight: 70
-keywords: ["Linux","CUDA"]
+keywords: ["Linux","CUDA",conda,python]
 description: "ubuntu 16.04 [re]install CUDA - Ubuntu 安装 CUDA"
 ---
+
+## 推荐玩法：
+
+**注意** ： 由于tensorflow的GPU版本依赖nvidia的cuda、cudnn库，因此一般需要包含cuda和cudnn的链接库文件，普遍做法是通过主机安装cudnn、cuda的方式。这里还有另外两种方式可以选择：
+
+### 方法一：使用Miniconda
+
+采用miniconda安装GPU版本的tensorflow会自动安装依赖的cuda、cudnn动态库以及其他python库，因此使用conda在安装tensorflow的时候可以灵活选择tensorflow版本和cuda版本，装完就能直接跑。
+
+####　安装方法：
+
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh
+
+```
+
+#### 离线使用步骤：
+
+1、在有网的机器上通过conda把环境装好（主要就是tensorflow、numpy等）；
+
+2、然后把miniconda文件夹打个压缩包；
+
+3、cp到U盘；
+
+4、从U盘cp到没有网的机器上；
+
+5、配置miniconda的环境变量（export PATH=$PATH:/usr/local/miniconda3/bin）就好了；
+
+
+### 方法二：使用nvidia-docker
+
+ 由于程序运行于容器之中，所以镜像中一般都是带有CUDA、CUDNN库的，因此只需要在docker所在的主机上安装显卡驱动即可，无需费太大力气去安装cuda、cuddn之类的东西。 参照： https://jermine.vdo.pub/linux/linux%E5%AE%89%E8%A3%85nvidia-docker/ 进行安装
+
+### 总结：
+
+直接运行在主机的项目，采用方法一更加方便；运行于docker中的项目更推荐采用nvidia-docker。
 
 ## 一、卸载原有cuda
 
@@ -43,6 +79,9 @@ $  sudo service nvidia-docker stop
 ### step2. 下载 .run 安装脚本
 
 下载地址：https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal
+
+
+如果需要安装其他版本可以打开 https://developer.nvidia.com/cuda-90-download-archive （cuda-90改成你需要的版本）然后下载，然后离线安装
 
 ### step3. 验证 gcc g++ 版本为 5.4.0
 
@@ -184,3 +223,4 @@ $ sudo mv info-bak/ info
 还好虚惊一场，只能说：
 
  `Surprise surprise, rebooting solved the issue。`
+

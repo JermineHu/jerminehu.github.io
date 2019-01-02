@@ -1,8 +1,8 @@
 ---
 title: "Linux安装Nvidia Docker"
 date: 2018-12-26T18:14:00+08:00
-categories: ["All","Linux",Nvidia,"Docker"]
-tags: ["Linux",Nvidia,"Docker"]
+categories: ["All","Linux",Nvidia,"Docker",“CUDA”]
+tags: ["Linux",Nvidia,"Docker",“CUDA”]
 toc: true
 author: "Jermine"
 author_homepage:  "/"
