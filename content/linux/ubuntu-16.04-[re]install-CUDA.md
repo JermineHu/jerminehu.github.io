@@ -1,21 +1,27 @@
 ---
-title: "ubuntu 16.04 [re]install CUDA - Ubuntu 安装 CUDA"
+title: "Linux [re]install CUDA - Linux 安装和使用 CUDA"
 date: 2018-08-24T13:48:25+08:00
-categories: ["All","Linux","CUDA",conda,python]
-tags: ["Linux","CUDA",conda,python]
+categories: ["All","Linux","CUDA",conda,python,docker]
+tags: ["Linux","CUDA",conda,python,docker,nvida-docker]
 toc: true
 author: "Jermine"
 author_homepage:  "/"
 weight: 70
-keywords: ["Linux","CUDA",conda,python]
-description: "ubuntu 16.04 [re]install CUDA - Ubuntu 安装 CUDA"
+keywords: ["Linux","CUDA",conda,python,docker,nvida-docker]
+description: Linux [re]install CUDA - Linux 安装和使用 CUDA"
 ---
 
-## 推荐玩法：
+# 简便安装方法
+
+## 推荐两种玩法：
 
 **注意** ： 由于tensorflow的GPU版本依赖nvidia的cuda、cudnn库，因此一般需要包含cuda和cudnn的链接库文件，普遍做法是通过主机安装cudnn、cuda的方式。这里还有另外两种方式可以选择：
 
-### 方法一：使用Miniconda
+### 方法一：使用nvidia-docker （我认为是棒的方式）
+
+ 由于程序运行于容器之中，所以镜像中一般都是带有CUDA、CUDNN库的，因此只需要在docker所在的主机上安装显卡驱动即可，无需费太大力气去安装cuda、cuddn之类的东西。 参照： https://jermine.vdo.pub/linux/linux%E5%AE%89%E8%A3%85nvidia-docker/ 进行安装
+
+### 方法二：使用Miniconda （裸金属主机下最棒的方式）
 
 采用miniconda安装GPU版本的tensorflow会自动安装依赖的cuda、cudnn动态库以及其他python库，因此使用conda在安装tensorflow的时候可以灵活选择tensorflow版本和cuda版本，装完就能直接跑。
 
@@ -26,26 +32,96 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && ba
 
 ```
 
+#### conda常用命令
+
+**配置源**
+
+```
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --set show_channel_urls yes
+```
+
+
+**创建指定python版本下包含某些包的环境**
+
+`conda create --name your_env_name python=3.5 numpy scipy`
+
+**列举当前所有环境**
+
+```
+conda info --envs
+conda env list
+```
+
+**进入某个环境**
+
+Linux 执行: `source activate your_env_name`
+Windows 执行 `activate your_env_name`
+
+**退出环境**
+
+Linux 执行: `source deactivate your_env_name`
+Windows 执行 `deactivate your_env_name`
+
+
+**复制某个环境**
+
+`conda create --name new_env_name --clone old_env_name `
+
+**删除某个环境**
+
+`conda remove --name your_env_name --all`
+
+
+**分享环境**
+
+如果你想把你当前的环境配置与别人分享，这样ta可以快速建立一个与你一模一样的环境（同一个版本的python及各种包）来共同开发/进行新的实验。一个分享环境的快速方法就是给ta一个你的环境的.yml文件。
+
+首先通过`activate target_env`要分享的环境target_env，然后输入下面的命令会在当前工作目录下生成一个environment.yml文件，
+
+`conda env export > environment.yml`
+
+小伙伴拿到environment.yml文件后，将该文件放在工作目录下，可以通过以下命令从该文件创建环境
+
+`conda env create -f environment.yml`
+
+
+当然，你也可以手写一个.yml文件用来描述或记录你的python环境。
+
+**包管理**
+
+列举当前活跃环境下的所有包
+
+`conda list`
+
+列举一个非当前活跃环境下的所有包
+
+`conda list -n your_env_name`
+
+为指定环境安装某个包
+
+`conda install -n env_name package_name`
+
+如果不能通过conda install来安装，文档中提到可以从Anaconda.org安装，但我觉得会更习惯用pip直接安装。pip在Anaconda中已安装好，不需要单独为每个环境安装pip。如需要用pip管理包，activate环境后直接使用即可。
+
+
 #### 离线使用步骤：
 
-1、在有网的机器上通过conda把环境装好（主要就是tensorflow、numpy等）；
+1、在有网的机器上通过conda把环境装好（主要就是tensorflow、numpy等），需要注意conda本身必须装到`/usr/local`目录下，完整目录为：`/usr/local/miniconda3`；
 
-2、然后把miniconda文件夹打个压缩包；
+2、然后把`/usr/local/miniconda3`文件夹打个压缩包；
 
-3、cp到U盘；
+3、将压缩包cp到U盘，推荐用EXT4格式（Windows下访问用Ext2fsd），默认Linux下不支持NTFS的读写（需要安装ntfs-3g），而FAT32有单个文件4GB的限制；
 
-4、从U盘cp到没有网的机器上；
+4、从U盘cp到没有网的机器上，解压到`/usr/local/`下，完整目录为：`/usr/local/miniconda3`；
 
-5、配置miniconda的环境变量（export PATH=$PATH:/usr/local/miniconda3/bin）就好了；
+5、配置miniconda的环境变量（`export PATH=$PATH:/usr/local/miniconda3/bin`）就好了；
+
+6、执行`source activate tf` 进入tf环境，然后执行python程序即可
 
 
-### 方法二：使用nvidia-docker
-
- 由于程序运行于容器之中，所以镜像中一般都是带有CUDA、CUDNN库的，因此只需要在docker所在的主机上安装显卡驱动即可，无需费太大力气去安装cuda、cuddn之类的东西。 参照： https://jermine.vdo.pub/linux/linux%E5%AE%89%E8%A3%85nvidia-docker/ 进行安装
-
-### 总结：
-
-直接运行在主机的项目，采用方法一更加方便；运行于docker中的项目更推荐采用nvidia-docker。
+# 传统安装方式
 
 ## 一、卸载原有cuda
 
