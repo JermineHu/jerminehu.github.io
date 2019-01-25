@@ -13,6 +13,8 @@ description: Linux [re]install CUDA - Linux 安装和使用 CUDA"
 
 # 简便安装方法
 
+**此文档来源于Jermine的个人blog ：** https://jermine.vdo.pub/linux/ubuntu-16.04-reinstall-cuda/
+
 ## 推荐两种玩法：
 
 **注意** ： 由于tensorflow的GPU版本依赖nvidia的cuda、cudnn库，因此一般需要包含cuda和cudnn的链接库文件，普遍做法是通过主机安装cudnn、cuda的方式。这里还有另外两种方式可以选择：
@@ -187,7 +189,7 @@ https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&t
 ## 三、测试cuda
 
 ```
-$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery 
+$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
 $ sudo make
 $ ./deviceQuery
 ```
@@ -203,7 +205,7 @@ $ ./deviceQuery
 ## 五、错误解决
 
 
-### 错误 1 
+### 错误 1
 
 ```
 apt-get -f install 错误 No apport report written because MaxReports is reached already Errors were...
@@ -230,7 +232,7 @@ E: Unmet dependencies. Try using -f.
 
 ```
 
-在尝试了 
+在尝试了
 
 ```
 sudo apt-get clean
@@ -241,7 +243,7 @@ sudo apt-get install -f
 ```
 都还存在同样问题时需要手动打开status
 
-sudo vi /var/lib/dpkg/status 
+sudo vi /var/lib/dpkg/status
 
 然后通过命令行输入 /name 比如 /cuda-curand-8-0  然后按Enter 键（下一个关键字按n）查找文件中的对应模块记录并将其删除（删除按dd），把以上所有模块记录全部删除后 shift+:组合，输入 wq！保存并退出，最后再次执行sudo apt-get install --f 。
 
@@ -277,7 +279,7 @@ $ sudo mv info-bak/ info
 ```
 一切就ok
 
-### 错误3 
+### 错误3
 
 `Failed to initialize NVML: Driver/library version mismatch`
 刚刚GPU遇到一个神奇的bug。
@@ -289,14 +291,13 @@ $ sudo mv info-bak/ info
 运行nvidia 官方的程序，报错
 
  `no CUDA-capable device is detected`
-如下图： 
+如下图：
 
 ![nvidia-app](/img/linux/5.png)
- 
+
 
 然后解决的办法是： 重启。。。重启。。。
 
 还好虚惊一场，只能说：
 
  `Surprise surprise, rebooting solved the issue。`
-
