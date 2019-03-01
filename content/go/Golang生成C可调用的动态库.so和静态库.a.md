@@ -309,3 +309,138 @@ exptest.go  libexptest.h  libexptest.a
 // 应用程序编译的方法如下：
 $ gcc -o exptest exptest.c libexptest.a 
 ```
+
+## go调用C/C++使用值传递和指针传递
+
+在实际项目中用到的不仅仅是基本类型之间的转换，更多的是函数封装中的值传递和指针传递，如何在C功能函数中和Go中进行各种值和指针传递呢？根本方法还是利用基本类型，包括特别常用unsafe.Pointer
+
+```go
+
+package main
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+#define MAX_FACES_PER_DETECT 64
+
+typedef  struct Point{
+    float x;
+    float y;
+}Point;
+
+typedef struct Rectangle{
+    Point lt;
+    Point rd;
+}Rectangle;
+
+typedef struct DetectFaceInfo{
+    int id;
+    float score;
+    Rectangle pos;
+}DetectFaceInfo;
+
+
+
+void setStruct(void **ppDetectInfo)
+{
+    DetectFaceInfo *pDetectInfo = (DetectFaceInfo *)malloc(sizeof(DetectFaceInfo));
+    memset(pDetectInfo, 0 , sizeof(pDetectInfo));
+    pDetectInfo->id = 1;
+    pDetectInfo->score = 0.98f;
+    pDetectInfo->pos.lt.x = 1;
+    pDetectInfo->pos.lt.y = 1;
+    pDetectInfo->pos.rd.x = 9;
+    pDetectInfo->pos.rd.y = 10;
+
+    fprintf(stdout, "A pDetectInfo address : %p\n", pDetectInfo);
+    *ppDetectInfo = pDetectInfo;
+}
+
+int printStruct(void *pdetectinfo)
+{
+    DetectFaceInfo * pDetectInfo = (DetectFaceInfo *)pdetectinfo;
+    fprintf(stdout, "B pDetectInfo address : %p\n", pDetectInfo);
+
+    fprintf(stdout, "id: %d\n", pDetectInfo->id);
+    fprintf(stdout, "score : %.3lf\n", pDetectInfo->score);
+    fprintf(stdout, "pos.lt.x : %d\n", pDetectInfo->pos.lt.x);
+    fprintf(stdout, "pos.lt.y : %d\n", pDetectInfo->pos.lt.y);
+    fprintf(stdout, "pos.rd.x : %d\n", pDetectInfo->pos.rd.x);
+    fprintf(stdout, "pos.rd.y : %d\n", pDetectInfo->pos.rd.y);
+}
+
+int freeStruct(void *pDetectInfo)
+{
+    fprintf(stdout, "C pDetectInfo address : %p\n", pDetectInfo);
+    free((DetectFaceInfo*)pDetectInfo);
+}
+
+*/
+import "C"
+
+import (
+    _ "fmt"
+    _ "reflect"
+    "unsafe"
+)
+
+func main() {
+    var pDetectInfo unsafe.Pointer
+
+    C.setStruct(&pDetectInfo)
+    C.printStruct(pDetectInfo)
+    C.freeStruct(pDetectInfo)
+}
+
+```
+
+从上面的例子可以知道还是利用了C和go的基本类型转换，更多的是利用指针。得到的运行结果是：
+
+```
+A pDetectInfo address : 012832B0
+B pDetectInfo address : 012832B0
+id: 1
+score : 0.980
+pos.lt.x : 1.000
+pos.lt.y : 1.000
+pos.rd.x : 9.000
+pos.rd.y : 10.000
+C pDetectInfo address : 012832B0
+
+```
+
+ 这是通过C的结构体将数据传送给go，同样的也可以利用在go中处理数据，然后传递给C，也是利用基本类型转换。这里做个记录：
+
+* C中的结构体如果带了typedef的话，那么在go中定义C结构体就不需要带struct了。反则反之。
+* Go中定义C结构体： var struct C.DetectFaceInfo
+* 再次注意，如果在结构体中有字符数组或者是char指针，注意区别
+
+
+## C/C++调用go实现struct值传递
+
+```go
+
+package main
+/*
+struct Vertex {
+    int X;
+    int Y;
+};
+*/
+import "C"
+import "fmt"
+
+//export getVertex
+func getVertex(X, Y C.int) C.struct_Vertex {
+    return C.struct_Vertex{X, Y}
+}
+
+func main() {
+    fmt.Println(getVertex(1, 2))
+}
+
+
+```
