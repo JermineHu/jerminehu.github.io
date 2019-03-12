@@ -1,0 +1,350 @@
+<svg id="mermaid-1527238345439" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:1926px;" viewBox="-50 -10 1926 892"><style>
+
+
+#mermaid-1527238345439 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  color: #333; }
+
+#mermaid-1527238345439 .node rect,
+#mermaid-1527238345439 .node circle,
+#mermaid-1527238345439 .node ellipse,
+#mermaid-1527238345439 .node polygon {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1527238345439 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1527238345439 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1527238345439 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1527238345439 .edgeLabel {
+  background-color: #e8e8e8; }
+
+#mermaid-1527238345439 .cluster rect {
+  fill: #ffffde !important;
+  stroke: #aaaa33 !important;
+  stroke-width: 1px !important; }
+
+#mermaid-1527238345439 .cluster text {
+  fill: #333; }
+
+#mermaid-1527238345439 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1527238345439 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1527238345439 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1527238345439 .actor-line {
+  stroke: grey; }
+
+#mermaid-1527238345439 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  marker-end: 'url(#arrowhead)';
+  stroke: #333; }
+
+#mermaid-1527238345439 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1527238345439 #arrowhead {
+  fill: #333; }
+
+#mermaid-1527238345439 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1527238345439 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1527238345439 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1527238345439 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1527238345439 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1527238345439 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  marker-end: 'url(#arrowhead)';
+  stroke: #CCCCFF; }
+
+#mermaid-1527238345439 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1527238345439 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px; }
+
+
+#mermaid-1527238345439 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1527238345439 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1527238345439 .section2 {
+  fill: #fff400; }
+
+#mermaid-1527238345439 .section1,
+#mermaid-1527238345439 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1527238345439 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1527238345439 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1527238345439 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1527238345439 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1527238345439 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px; }
+
+
+#mermaid-1527238345439 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges; }
+
+#mermaid-1527238345439 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1527238345439 .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1527238345439 .task {
+  stroke-width: 2; }
+
+#mermaid-1527238345439 .taskText {
+  text-anchor: middle;
+  font-size: 11px; }
+
+#mermaid-1527238345439 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px; }
+
+#mermaid-1527238345439 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1527238345439 .taskText0,
+#mermaid-1527238345439 .taskText1,
+#mermaid-1527238345439 .taskText2,
+#mermaid-1527238345439 .taskText3 {
+  fill: white; }
+
+#mermaid-1527238345439 .task0,
+#mermaid-1527238345439 .task1,
+#mermaid-1527238345439 .task2,
+#mermaid-1527238345439 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1527238345439 .taskTextOutside0,
+#mermaid-1527238345439 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1527238345439 .taskTextOutside1,
+#mermaid-1527238345439 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1527238345439 .active0,
+#mermaid-1527238345439 .active1,
+#mermaid-1527238345439 .active2,
+#mermaid-1527238345439 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1527238345439 .activeText0,
+#mermaid-1527238345439 .activeText1,
+#mermaid-1527238345439 .activeText2,
+#mermaid-1527238345439 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1527238345439 .done0,
+#mermaid-1527238345439 .done1,
+#mermaid-1527238345439 .done2,
+#mermaid-1527238345439 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1527238345439 .doneText0,
+#mermaid-1527238345439 .doneText1,
+#mermaid-1527238345439 .doneText2,
+#mermaid-1527238345439 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1527238345439 .crit0,
+#mermaid-1527238345439 .crit1,
+#mermaid-1527238345439 .crit2,
+#mermaid-1527238345439 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1527238345439 .activeCrit0,
+#mermaid-1527238345439 .activeCrit1,
+#mermaid-1527238345439 .activeCrit2,
+#mermaid-1527238345439 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1527238345439 .doneCrit0,
+#mermaid-1527238345439 .doneCrit1,
+#mermaid-1527238345439 .doneCrit2,
+#mermaid-1527238345439 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1527238345439 .doneCritText0,
+#mermaid-1527238345439 .doneCritText1,
+#mermaid-1527238345439 .doneCritText2,
+#mermaid-1527238345439 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1527238345439 .activeCritText0,
+#mermaid-1527238345439 .activeCritText1,
+#mermaid-1527238345439 .activeCritText2,
+#mermaid-1527238345439 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1527238345439 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black; }
+
+#mermaid-1527238345439 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 10px; }
+
+#mermaid-1527238345439 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1527238345439 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1527238345439 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1527238345439 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1527238345439 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1527238345439 .commit-id,
+#mermaid-1527238345439 .commit-msg,
+#mermaid-1527238345439 .branch-label {
+  fill: lightgrey;
+  color: lightgrey; }
+</style><style>#mermaid-1527238345439 {
+    color: rgba(0, 0, 0, 0.65);
+    font: normal normal 400 normal 14px / 21px "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">CodeCommit</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Gerrit</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Jenkins</tspan></text></g><g><line id="actor3" x1="675" y1="5" x2="675" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">Sonarqube</tspan></text></g><g><line id="actor4" x1="875" y1="5" x2="875" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="800" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Harbor</tspan></text></g><g><line id="actor5" x1="1075" y1="5" x2="1075" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="1000" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1075" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1075" dy="0">Kubernetes</tspan></text></g><g><line id="actor6" x1="1275" y1="5" x2="1275" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="1200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1275" dy="0">Docker</tspan></text></g><g><line id="actor7" x1="1475" y1="5" x2="1475" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="1400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1475" dy="0">Gitea</tspan></text></g><g><line id="actor8" x1="1675" y1="5" x2="1675" y2="881" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="1600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1675" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1675" dy="0">Dingtalk</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">提交代码到Gerrit</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="300" y="110" fill="#EDF2AE" stroke="#666" width="150" height="36" rx="0" ry="0" class="note"></rect><text x="296" y="134" fill="black" class="noteText"><tspan x="316" fill="black">触发Jenkins调用Sonarqube进行代码静态分析</tspan></text></g><g><text x="375" y="174" class="messageText" style="text-anchor: middle;">触发Jenkins开始执行Pipeline</text><line x1="275" y1="181" x2="475" y2="181" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="575" y="234" class="messageText" style="text-anchor: middle;">执行代码静态分析，直到通过</text><line x1="475" y1="241" x2="675" y2="241" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><line x1="465" y1="191" x2="685" y2="191" class="loopLine"></line><line x1="685" y1="191" x2="685" y2="251" class="loopLine"></line><line x1="465" y1="251" x2="685" y2="251" class="loopLine"></line><line x1="465" y1="191" x2="465" y2="251" class="loopLine"></line><polygon points="465,191 515,191 515,204 506.6,211 465,211" class="labelBox"></polygon><text x="472.5" y="206" fill="black" class="labelText"><tspan x="472.5" fill="black">loop</tspan></text><text x="575" y="206" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="575" fill="black">[ CodeCheck ]</tspan></text></g><g><text x="475" y="304" class="messageText" style="text-anchor: middle;">触发单元测试、集成测试等测试, 测试通过标记为Verified</text><path d="M 475,311 C 535,301 535,341 475,331" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><line x1="290.703125" y1="261" x2="659.296875" y2="261" class="loopLine"></line><line x1="659.296875" y1="261" x2="659.296875" y2="351" class="loopLine"></line><line x1="290.703125" y1="351" x2="659.296875" y2="351" class="loopLine"></line><line x1="290.703125" y1="261" x2="290.703125" y2="351" class="loopLine"></line><polygon points="290.703125,261 340.703125,261 340.703125,274 332.303125,281 290.703125,281" class="labelBox"></polygon><text x="298.203125" y="276" fill="black" class="labelText"><tspan x="298.203125" fill="black">loop</tspan></text><text x="475" y="276" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="475" fill="black">[ CodeCheck ]</tspan></text></g><g><text x="1075" y="379" class="messageText" style="text-anchor: middle;">自动化测试通过后，通过Dingtalk即时通知管理员去Gerrit Review代码</text><line x1="475" y1="386" x2="1675" y2="386" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="875" y="414" class="messageText" style="text-anchor: middle;">Gerrit执行Replication 将代码push到正式的仓库Gitea</text><line x1="275" y1="421" x2="1475" y2="421" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="975" y="449" class="messageText" style="text-anchor: middle;">触发Jenkins执行代码目录下的Jenkinsfile（MulitBrach Pipeline）</text><line x1="1475" y1="456" x2="475" y2="456" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="875" y="484" class="messageText" style="text-anchor: middle;">构建Docker images</text><line x1="475" y1="491" x2="1275" y2="491" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="675" y="519" class="messageText" style="text-anchor: middle;">将构建好的Docker镜像推入Harbor仓库</text><line x1="475" y1="526" x2="875" y2="526" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="775" y="554" class="messageText" style="text-anchor: middle;">从Harbor部署到测试环境</text><line x1="475" y1="561" x2="1075" y2="561" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="1075" y="589" class="messageText" style="text-anchor: middle;">执行E2E测试，将结果通知给当前代码分支的负责人（架构师、测试经理或发布人员等）</text><line x1="475" y1="596" x2="1675" y2="596" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="1475" y="624" class="messageText" style="text-anchor: middle;">管理员将代码Merrage到 release 分支(同样会触发多分枝构建，执行上述流程，发布到release环境，即预发布环境)</text><path d="M 1475,631 C 1535,621 1535,661 1475,651" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></path></g><g><text x="1475" y="689" class="messageText" style="text-anchor: middle;">进过充分测试和准备后由管理人员合并到Master分支</text><path d="M 1475,696 C 1535,686 1535,726 1475,716" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></path></g><g><text x="975" y="754" class="messageText" style="text-anchor: middle;">触发发布程序</text><line x1="1475" y1="761" x2="475" y2="761" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><text x="775" y="789" class="messageText" style="text-anchor: middle;">调用K8s的API进行发布，让程序灰度到生产</text><line x1="475" y1="796" x2="1075" y2="796" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><rect x="0" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">CodeCommit</tspan></text></g><g><rect x="200" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Gerrit</tspan></text></g><g><rect x="400" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Jenkins</tspan></text></g><g><rect x="600" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">Sonarqube</tspan></text></g><g><rect x="800" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Harbor</tspan></text></g><g><rect x="1000" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1075" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1075" dy="0">Kubernetes</tspan></text></g><g><rect x="1200" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1275" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1275" dy="0">Docker</tspan></text></g><g><rect x="1400" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1475" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1475" dy="0">Gitea</tspan></text></g><g><rect x="1600" y="816" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="1675" y="848.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="1675" dy="0">Dingtalk</tspan></text></g></svg>
