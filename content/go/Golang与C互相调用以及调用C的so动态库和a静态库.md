@@ -406,3 +406,50 @@ go-test1.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically
 
 
 ```
+
+## Golang调用C++函数
+
+
+lib.cpp file (这里面你可以写 c++ 代码 ，但是go 需要调用的，你需要写成 红色标记的方式导出)
+
+```C++
+extern "C" int start(void); //标记的方式导出
+ 
+int start()//int argc, char **argv
+{
+  return;
+}
+
+```
+
+注意：go不能直接调用C++，必须要以C的函数导出才能供go调用。
+
+**lib.h** 
+
+`int start(void);`
+
+```golang
+package main
+
+/*
+#include "lib.h"
+#cgo LDFLAGS: -L.. -llib
+
+*/
+import "C"
+
+func main() {
+	C.start()
+}
+gcc -g -fPIC -c -o lib.o lib.cpp
+gcc -g -fPIC -shared -o liblib.so lib.o
+
+```
+
+其他参照： 
+
+https://blog.csdn.net/zdy0_2004/article/details/79124269
+
+https://studygolang.com/articles/16296
+
+https://blog.csdn.net/a1368783069/article/details/84142924
