@@ -49,10 +49,22 @@ du -sh  $(ls)
 du -sh * 
 ```
 
+**根据大小倒叙排列当前目录信息**
+
+```
+du -sm $(ls -A) | sort -nr
+```
+
 **获取指定目录下每个目录或文件的大小**
 
 ```
-du -sh * $(find /home  -maxdepth 1)
+du -sh $(find /home  -maxdepth 1 -depth)
+```
+
+**获取指定目录下每个目录或文件的大小并倒叙排列**
+
+```
+du -sm $(find /home  -maxdepth 1 -depth) | sort -nr
 ```
 
 ## 查看目录下有多少文件
