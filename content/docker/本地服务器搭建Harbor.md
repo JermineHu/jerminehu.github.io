@@ -47,6 +47,38 @@ tar xvf harbor-offline-installer-v1.6.2.tar
 
 ```
 vi harbor.cfg
+
+[root@sss-0004 harbor]# cat harbor.cfg 
+## Configuration file of Harbor
+
+#This attribute is for migrator to detect the version of the .cfg file, DO NOT MODIFY!
+_version = 1.7.0
+#The IP address or hostname to access admin UI and registry service.
+#DO NOT use localhost or 127.0.0.1, because Harbor needs to be accessed by external clients.
+#DO NOT comment out this line, modify the value of "hostname" directly, or the installation will fail.
+hostname = hub.fi.vdo.pub
+
+#The protocol for accessing the UI and token/notification service, by default it is http.
+#It can be set to https if ssl is enabled on nginx.
+ui_url_protocol = https
+
+#Maximum number of job workers in job service  
+max_job_workers = 10 
+
+#Determine whether or not to generate certificate for the registry's token.
+#If the value is on, the prepare script creates new root cert and private key 
+#for generating token to access the registry. If the value is off the default key/cert will be used.
+#This flag also controls the creation of the notary signer's cert.
+customize_crt = on
+
+#The path of cert and key files for nginx, they are applied only the protocol is set to https
+ssl_cert = /data/harbor/cert/server.crt
+ssl_cert_key = /data/harbor/cert/server.key
+
+#The path of secretkey storage
+secretkey_path = /data/harbor
+
+
 ```
 必需的参数有：
 
@@ -65,7 +97,7 @@ vi harbor.cfg
 执行：
 
 ```
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 3000 -nodes
+openssl req -x509 -newkey rsa:4096 -keyout server.key -out server.crt -days 3000 -nodes
 Generating a 4096 bit RSA private key
 ```
 
@@ -186,9 +218,7 @@ rm -rf /data/*
 为了简化上述流程，可以新建脚本：
 
 ```
-cat > reset-harbor.sh
-```
-```
+cat > reset-harbor.sh 
 #!/bin/bash
 docker rm -f $(docker ps -aq -f "label=com.docker.compose.project=harbor" )
 sudo rm -rf common/config/*
@@ -199,9 +229,10 @@ sudo ./prepare --with-notary --with-clair --with-chartmuseum
 #sudo chown -R $(whoami) /data/harbor
 sudo chmod -R 777 common/config
 sudo chmod -R 777 /data/harbor
-PATH=$PATH docker-compose up -f ./docker-compose.yml -f ./docker-compose.notary.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d
+docker-compose -f ./docker-compose.yml -f ./docker-compose.notary.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d
 docker ps -a -f "label=com.docker.compose.project=harbor"
 #每次./prepare和docker-compose up后都需要删除config和data里的文件。
+
 ```
 退出执行：
 
