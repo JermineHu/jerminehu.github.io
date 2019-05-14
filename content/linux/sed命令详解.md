@@ -45,11 +45,11 @@ pattern/,x | 在给定行号上查询包含模式的行
 x,/pattern/ | 通过行号和模式查询匹配的行
 x,y! | 查询不包含指定行号x和y的行
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309060851.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309060851.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309060952.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309060952.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061053.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061053.png)
 
 ### 使用正则表达式、扩展正则表达式(必须结合-r选项)
 
@@ -127,13 +127,13 @@ sed -n '/adm/,2p' /etc/passwd
 ###以下图片是对这些sed命令例子的解释和显示结果  
 ```
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061054.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061054.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061055.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061055.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061056.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061056.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061157.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061157.png)
 
 ### sed命令实现对文件内容的添加：(对源文件添加的话就用-i参数):
 ```
@@ -150,35 +150,35 @@ sed -n '/adm/,2p' /etc/passwd
 
   ```
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061358.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061358.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061459.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061459.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061460.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061460.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061461.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061461.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061462.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061462.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061563.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061563.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061564.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061564.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061665.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061665.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061766.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061766.png)
 
 ### sed命令实现对文件内容的删除：(对源文件直接删除用-i参数):
 
 sed的删除操作是针对文件的行，如果想删除行中的某个字符，那就用替换(别急，替换稍后就讲，而且替换是sed最常用的)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061767.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061767.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061868.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061868.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061969.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061969.png)
 
-![img](http://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061970.png)
+![img](https://www.2cto.com/uploadfile/Collfiles/20140613/2014061309061970.png)
 
 ### 重点：sed命令实现对文件内容的替换（替换是在shell自动化脚本中用到最多的操作）
 
@@ -335,7 +335,7 @@ NETMASK=255.255.0.0
 
 #### 处理以下文件内容,将域名取出并进行计数排序,如处理:  
 ```
-http://www.baidu.com/index.<a target="_blank" href="http://www.2cto.com/kf/qianduan/css/" class="keylink" style="border:none; padding:0px; margin:0px; color:rgb(51,51,51); text-decoration:none; font-size:14px">html</a>  
+http://www.baidu.com/index.<a target="_blank" href="https://www.2cto.com/kf/qianduan/css/" class="keylink" style="border:none; padding:0px; margin:0px; color:rgb(51,51,51); text-decoration:none; font-size:14px">html</a>  
 http://www.baidu.com/1.html  
 http://post.baidu.com/index.html  
 http://mp3.baidu.com/index.html  
