@@ -1,8 +1,8 @@
 ---
 title: "Surf the Net on Linux Host by Notebook－把笔记本的无线网络通过网线共享给台式机"
 date: 2018-10-27T16:45:22+08:00
-categories: ["All","Linux","win10"]
-tags: ["Linux","win10"]
+categories: ["All","Linux","windows"]
+tags: ["Linux","windows"]
 toc: true
 author: "Jermine"
 author_homepage:  "/"

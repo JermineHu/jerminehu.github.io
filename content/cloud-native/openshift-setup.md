@@ -1,7 +1,7 @@
 ---
 title: "Openshift Setup"
 date: 2019-03-15T09:12:34+08:00
-categories: ["All",kubernates,openshift]
+categories: ["All",kubernetes,openshift]
 tags: [kubernates,openshift]
 toc: true
 author: "Jermine"

@@ -1,7 +1,19 @@
-#LDAP与Harbor集成
+---
+title: "LDAP与Harbor集成"
+date: 2018-09-19T13:56:48+08:00
+categories: ["All","DevOps","Linux"]
+tags: ["Devops","LDAP","Harbor","Linux"]
+toc: true
+author: "Jermine"
+author_homepage:  "/"
+weight: 70
+keywords: ["Devops","LDAP","Harbor","Linux"]
+description: "LDAP与Harbor集成"
+---
+# LDAP与Harbor集成
 
-######OpenLDAP是一个集中的用户账号管理系统；使用轻量级目录访问协议（LDAP）构建集中的身份验证系统可以减少管理成本，增强安全性，避免数据复制的问题，并提高数据的一致性。
-##修改harbor.cfg
+###### OpenLDAP是一个集中的用户账号管理系统；使用轻量级目录访问协议（LDAP）构建集中的身份验证系统可以减少管理成本，增强安全性，避免数据复制的问题，并提高数据的一致性。
+## 修改harbor.cfg
 
 Harbor默认是使用mysql数据库进行用户管理，那么我们需要修改Harbor的配置文件。
 
@@ -17,7 +29,7 @@ vi harbor.cfg
 5. **ldap_group_basedn = ou=dev,dc=xinktech,dc=com**
 6. **ldap_group_filter = objectclass=posixGroup**
 
-##生成自签名证书
+## 生成自签名证书
 首先，把自己的IP地址(192.168.16.85)域名设置为: test.harbor.com:
 
 ```
@@ -75,7 +87,7 @@ mv test.harbor.com.crt server.crt
 ```
 mv test.harbor.com.key server.key
 ```
-##重新启动
+## 重新启动
 
 ```
 sudo ./prepare
@@ -98,7 +110,7 @@ docker-compose up -d
 ```
 docker restart [IMAGE ID]
 ```
-##登陆前的准备
+## 登陆前的准备
 
 在登陆docker
 ```
@@ -114,7 +126,7 @@ Error response from daemon: Get https://192.168.16.85/v2/: x509: cannot validate
 LDAP URL：**ldap://192.168.16.196**
 
 LDAP搜索DN修改为：**cn=admin,dc=com** 
-######一直写的是**uid=Jermine,ou=dev,dc=xinktech,dc=com**，这是不对的，因为Jermine只有用户权限，不是管理员。
+###### 一直写的是**uid=Jermine,ou=dev,dc=xinktech,dc=com**，这是不对的，因为Jermine只有用户权限，不是管理员。
 
 LDAP搜索密码：**123456**
 
@@ -126,7 +138,7 @@ LDAP组基础DN：**ou=dev,dc=xinktech,dc=com**
 
 LDAP组过滤器：**objectclass=posixGroup**
 
-##pull&&push
+## pull&&push
 
 登陆用户**cgh**
 

@@ -1205,7 +1205,7 @@ Sharemix的使命是将分享精神撒到公司的各个地方，如果上天给
 ### 5.4.	文件分享方案
  文件分享方案采用Nextcloud。
 
- 相对简单靠谱的方案有购买 Office 365 用微软的 OneDrive、番·羽·土·啬使用国外的 Dropbox、Google Drive 等、或者购买 NAS 设备。当然，你还可以用自家/公司的电脑或租用 VPS 服务器来「搭建自己的私有云网盘」！除了 SeaFile、ownCloud、Daemon Sync 外，新一代的开源网盘 Nextcloud 同样值得推荐。
+ 相对简单靠谱的方案有购买 Office 365 用微软的 OneDrive、或使用国外其他的 Dropbox、Google Drive 等、或者购买 NAS 设备。当然，你还可以用自家/公司的电脑或租用 VPS 服务器来「搭建自己的私有云网盘」！除了 SeaFile、ownCloud、Daemon Sync 外，新一代的开源网盘 Nextcloud 同样值得推荐。
 
 **Nextcloud - 打造私有云网盘**
 

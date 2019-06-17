@@ -1,13 +1,13 @@
 ---
 title: "本地服务器搭建Harbor"
 date: 2018-12-10T17:38:45+08:00
-categories: ["All",“docker”,"Harbor","registry","helm","chart","k8s"]
-tags: [“docker”,"Harbor","registry","helm","chart","k8s"]
+categories: ["All",“docker”,"Harbor","registry","helm","chart","kubernetes"]
+tags: [“docker”,"Harbor","registry","helm","chart","kubernetes"]
 toc: true
 author: "Jermine & Grover"
 author_homepage:  "/"
 weight: 70
-keywords: [“docker”,"Harbor","registry","helm","chart","k8s"]
+keywords: [“docker”,"Harbor","registry","helm","chart","kubernetes"]
 description: "本地服务器搭建Harbor"
 ---
 

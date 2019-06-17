@@ -1,8 +1,8 @@
 ---
 title: "Sub System Linux for Win10 - Win10设置Linux子系统"
 date: 2017-09-07T10:29:47+08:00
-categories: ["All","Linux",Win10]
-tags: ["Win10", "Linux"]
+categories: ["All","Linux",windows]
+tags: ["windows", "Linux"]
 toc: true
 author: "Jermine"
 author_homepage:  "/"
