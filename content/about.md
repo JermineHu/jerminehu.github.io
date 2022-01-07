@@ -26,7 +26,7 @@ description= "关于我-Jermine 的一些介绍"
 
 <p style="height:400px">
 QQ:<img style="float:left; display:inline; margin-top:0; margin-left:5px;" src="https://i.vdo.pub/imgs/20220107103001.jpg" alt="image">
- Wechat <img style="float:left; display:inline; margin-top:0; margin-left:5px;"src="https://i.vdo.pub/imgs/20200224132237.png" alt="image">
+ Wechat <img style="float:left; display:inline; margin-top:0; margin-left:5px;"src="https://i.vdo.pub/imgs/20220107104441.png" alt="image">
 </p>
 
 **邮箱:**  jermine.hu@qq.com （其实有很多邮箱，给个最短的吧！）
