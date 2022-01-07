@@ -25,7 +25,8 @@ description= "关于我-Jermine 的一些介绍"
 **QQ、微信:**  451444272  （我是qq重度使用者，微信是用qq号登的，属于第一批微信用户！）
 
 <p style="height:400px">
-<img style="float:left; display:inline; margin-top:0; margin-left:5px;" src="//wx1.sinaimg.cn/wap360/006LbLfvgy1g0wm6glzrtj30f00kkta2.jpg" alt="image"><img style="float:left; display:inline; margin-top:0; margin-left:5px;"src="//wx2.sinaimg.cn/wap360/006LbLfvgy1g0wmc54urgj30by0by758.jpg" alt="image">
+QQ:<img style="float:left; display:inline; margin-top:0; margin-left:5px;" src="https://i.vdo.pub/imgs/20220107103001.jpg" alt="image">
+ Wechat <img style="float:left; display:inline; margin-top:0; margin-left:5px;"src="https://i.vdo.pub/imgs/20200224132237.png" alt="image">
 </p>
 
 **邮箱:**  jermine.hu@qq.com （其实有很多邮箱，给个最短的吧！）
